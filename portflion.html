@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Salwa Mouaddab</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,500;1,600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-peach: #f8d3c5;
+      --bg-cream: #fbf7f2;
+      --bg-blue: #b8d0eb;
+      --text-brown: #422b29;
+      --text-muted: #6b5250;
+      --border-soft: #e6c6bc;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text-brown);
+      background-color: var(--bg-peach);
+      overflow-x: hidden;
+    }
+
+    /* Structure générale de chaque Slide / Page */
+    section.slide {
+      min-height: 100vh;
+      width: 100%;
+      padding: 60px 8%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-bottom: 1px solid rgba(66, 43, 41, 0.08);
+    }
+
+    section.slide:nth-child(even) {
+      background-color: var(--bg-cream);
+    }
+
+    section.slide:nth-child(odd) {
+      background-color: var(--bg-peach);
+    }
+
+    /* Numéro de page en bas à droite (01, 02, ...) */
+    .page-number {
+      position: absolute;
+      bottom: 30px;
+      right: 45px;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--text-brown);
+      opacity: 0.7;
+    }
+
+    /* Titres des sections */
+    .section-tag {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    h2.section-title {
+      font-size: 38px;
+      font-weight: 800;
+      margin-bottom: 10px;
+      letter-spacing: -0.5px;
+    }
+
+    h3.section-subtitle {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 24px;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 35px;
+    }
+
+    /* =========================================
+       SLIDE 01 : COUVERTURE + BADGE SUSPENDU
+       ========================================= */
+    #page-01 {
+      padding-top: 0;
+      background: linear-gradient(
+        to bottom,
+        var(--bg-blue) 0%,
+        var(--bg-blue) 22%,
+        var(--bg-peach) 22%,
+        var(--bg-peach) 100%
+      );
+    }
+
+    /* Stores bleus en haut de la page 01 */
+    #page-01::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 22%;
+      background: repeating-linear-gradient(
+        to bottom,
+        #c5dbf2,
+        #c5dbf2 24px,
+        #9eb8d6 25px,
+        #a8c2e0 27px
+      );
+      border-bottom: 3px solid #96b0ce;
+      z-index: 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 40px;
+      z-index: 2;
+      width: 100%;
+    }
+
+    .hero-text {
+      padding-top: 100px;
+    }
+
+    .hero-text h1 {
+      font-size: 64px;
+      font-weight: 800;
+      line-height: 1.05;
+      margin-bottom: 12px;
+    }
+
+    .hero-text .script-accent {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 34px;
+      color: var(--text-brown);
+      margin-bottom: 18px;
+      display: block;
+    }
+
+    .hero-text p {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 480px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .hero-footer-info {
+      display: flex;
+      gap: 24px;
+      font-size: 13px;
+      font-weight: 600;
+      padding-top: 20px;
+      border-top: 1px solid rgba(66, 43, 41, 0.2);
+    }
+
+    /* Conteneur du Badge (à droite sur Page 01) */
+    .badge-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: -60px; /* Accroché tout en haut */
+    }
+
+    .lanyard {
+      width: 42px;
+      height: 115px;
+      background-color: #d8c2c5;
+      background-image: radial-gradient(#422b29 22%, transparent 23%),
+                        radial-gradient(#422b29 22%, transparent 23%);
+      background-size: 20px 20px;
+      background-position: 0 0, 10px 10px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    .rivet {
+      width: 8px;
+      height: 8px;
+      background: radial-gradient(circle at 30% 30%, #ffffff, #8e9499);
+      border-radius: 50%;
+      position: absolute;
+      bottom: 12px;
+    }
+
+    .clasp-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: -6px;
+      z-index: 3;
+    }
+
+    .clasp-loop {
+      width: 50px;
+      height: 24px;
+      border: 4px solid #b5bcc2;
+      border-radius: 6px 6px 20px 20px;
+    }
+
+    .clasp-body {
+      width: 14px;
+      height: 20px;
+      background: linear-gradient(90deg, #9aa1a8, #eef2f5, #8f969c);
+      border-radius: 3px;
+      margin-top: -3px;
+    }
+
+    .clasp-hook {
+      width: 22px;
+      height: 32px;
+      border: 4px solid #b5bcc2;
+      border-left: 4px solid #8f969c;
+      border-radius: 12px;
+      margin-top: -3px;
+    }
+
+    .badge-card {
+      width: 270px;
+      background-color: var(--bg-cream);
+      border-radius: 18px;
+      padding: 32px 20px 22px;
+      margin-top: -14px;
+      box-shadow: 0 18px 35px rgba(66, 43, 41, 0.14);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    .badge-card:hover {
+      transform: rotate(-1.5deg) translateY(3px);
+    }
+
+    .badge-hole {
+      width: 24px;
+      height: 9px;
+      background-color: var(--bg-peach);
+      border-radius: 10px;
+      position: absolute;
+      top: 12px;
+    }
+
+    .badge-header {
+      text-align: center;
+      margin-top: 6px;
+      margin-bottom: 14px;
+      line-height: 1;
+    }
+
+    .badge-header .top-word,
+    .badge-header .bottom-word {
+      display: block;
+      font-weight: 800;
+      font-size: 17px;
+    }
+
+    .badge-header .script-word {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 24px;
+      margin: -2px 0;
+    }
+
+    .photo-frame {
+      width: 105px;
+      height: 105px;
+      border: 1.5px solid #c9b9b6;
+      border-radius: 10px;
+      padding: 4px;
+      background-color: #ffffff;
+      margin-bottom: 14px;
+      overflow: hidden;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .info-section {
+      width: 100%;
+      padding: 0 10px;
+    }
+
+    .user-name {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .user-role {
+      font-size: 10px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .barcode {
+      width: 100%;
+      height: 20px;
+      background: repeating-linear-gradient(
+        to right,
+        #422b29 0px, #422b29 2px,
+        transparent 2px, transparent 5px,
+        #422b29 5px, #422b29 9px,
+        transparent 9px, transparent 11px,
+        #422b29 11px, #422b29 12px,
+        transparent 12px, transparent 16px
+      );
+      margin-bottom: 10px;
+    }
+
+    .badge-brand {
+      font-size: 8.5px;
+      font-weight: 700;
+      letter-spacing: 4px;
+    }
+
+    .badge-caption {
+      margin-top: 14px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    /* =========================================
+       SLIDE 02 : SOMMAIRE
+       ========================================= */
+    .sommaire-list {
+      list-style: none;
+      max-width: 700px;
+      margin-top: 20px;
+    }
+
+    .sommaire-list li a {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 22px 15px;
+      text-decoration: none;
+      color: var(--text-brown);
+      border-bottom: 1.5px dashed rgba(66, 43, 41, 0.25);
+      transition: all 0.25s ease;
+    }
+
+    .sommaire-list li a:hover {
+      padding-left: 28px;
+      background-color: rgba(248, 211, 197, 0.35);
+      border-radius: 10px;
+    }
+
+    .sommaire-title {
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .sommaire-num {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    /* =========================================
+       SLIDE 03 : INTRODUCTION
+       ========================================= */
+    .intro-card {
+      background-color: var(--bg-cream);
+      padding: 45px;
+      border-radius: 22px;
+      box-shadow: 0 15px 35px rgba(66, 43, 41, 0.08);
+      max-width: 850px;
+    }
+
+    .intro-card p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--text-brown);
+      margin-bottom: 25px;
+    }
+
+    .quote-box {
+      border-left: 4px solid var(--text-brown);
+      padding: 15px 22px;
+      background-color: rgba(248, 211, 197, 0.35);
+      border-radius: 0 12px 12px 0;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 19px;
+      line-height: 1.5;
+    }
+
+    /* =========================================
+       SLIDE 04 : VISION & MISSION
+       ========================================= */
+    .vision-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 10px;
+    }
+
+    .vision-box {
+      background-color: var(--bg-peach);
+      padding: 35px;
+      border-radius: 20px;
+      border: 1px solid rgba(66, 43, 41, 0.1);
+    }
+
+    .vision-box h4 {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .vision-box p {
+      font-size: 14.5px;
+      line-height: 1.7;
+      color: var(--text-brown);
+    }
+
+    /* =========================================
+       SLIDE 05 : MES PROJETS
+       ========================================= */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 22px;
+      margin-top: 10px;
+    }
+
+    .project-card {
+      background-color: var(--bg-cream);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 10px 25px rgba(66, 43, 41, 0.07);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.25s ease;
+      border: 1px solid rgba(66, 43, 41, 0.08);
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      background-color: var(--bg-blue);
+      color: var(--text-brown);
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      width: fit-content;
+    }
+
+    .project-card h4 {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .project-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 18px;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .project-links a {
+      text-decoration: none;
+      color: var(--bg-cream);
+      background-color: var(--text-brown);
+      padding: 7px 14px;
+      border-radius: 8px;
+      transition: opacity 0.2s;
+    }
+
+    .project-links a:hover {
+      opacity: 0.85;
+    }
+
+    .project-links span {
+      padding: 7px 10px;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* =========================================
+       SLIDE 06 : CONTACT & FOOTER
+       ========================================= */
+    .contact-container {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin: 30px 0 45px;
+    }
+
+    .contact-links a {
+      text-decoration: none;
+      color: var(--text-brown);
+      background-color: var(--bg-peach);
+      padding: 16px 25px;
+      border-radius: 14px;
+      font-weight: 600;
+      font-size: 15px;
+      transition: transform 0.2s, background-color 0.2s;
+      border: 1px solid rgba(66, 43, 41, 0.12);
+    }
+
+    .contact-links a:hover {
+      transform: scale(1.02);
+      background-color: var(--bg-blue);
+    }
+
+    .merci-footer {
+      padding-top: 25px;
+      border-top: 1px dashed rgba(66, 43, 41, 0.25);
+    }
+
+    .merci-footer h2 {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 42px;
+    }
+
+    /* Responsive Mobile */
+    @media (max-width: 860px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-text {
+        padding-top: 160px;
+        order: 2;
+      }
+      .hero-footer-info {
+        justify-content: center;
+      }
+      .badge-wrapper {
+        order: 1;
+        margin-top: 0;
+      }
+      .hero-text h1 {
+        font-size: 44px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =====================================
+       PAGE 01 : COUVERTURE & BADGE
+       ===================================== -->
+  <section class="slide" id="page-01">
+    <div class="hero-grid">
+      <!-- Texte de présentation à gauche -->
+      <div class="hero-text">
+        <span class="section-tag">Edition 2026</span>
+        <h1>Portfolio</h1>
+        <span class="script-accent">Développeuse Digitale</span>
+        <p>Étudiante & Stagiaire en Développement Digital Full-Stack. Conception d'interfaces modernes, fluides et créatives.</p>
+        <div class="hero-footer-info">
+          <span><strong>Salwa Mouaddab</strong></span>
+          <span>•</span>
+          <span>github.com/salwamouaddab</span>
+        </div>
+      </div>
+
+      <!-- Ton Badge suspendu à droite -->
+      <div class="badge-wrapper">
+        <div class="lanyard">
+          <div class="rivet"></div>
+        </div>
+        <div class="clasp-container">
+          <div class="clasp-loop"></div>
+          <div class="clasp-body"></div>
+          <div class="clasp-hook"></div>
+        </div>
+        <div class="badge-card">
+          <div class="badge-hole"></div>
+          <div class="badge-header">
+            <span class="top-word">DEV</span>
+            <span class="script-word">Friendly</span>
+            <span class="bottom-word">OFFICE</span>
+          </div>
+          <div class="photo-frame">
+            <!-- Remplace par le chemin relatif de ton image sur GitHub (ex: images/photo.jpeg) -->
+            <img src="c:\Users\PC\Downloads\WhatsApp Image 2026-11-15 at 21.15.32.jpeg" alt="Salwa Mouaddab">
+          </div>
+          <div class="info-section">
+            <div class="user-name">SALWA MOUADDAB</div>
+            <div class="user-role">Stagiaire en Développement Digital</div>
+            <div class="barcode"></div>
+          </div>
+          <div class="badge-brand">OFPPT • DEV</div>
+        </div>
+        <div class="badge-caption">(Only human writing code.)</div>
+      </div>
+    </div>
+    <div class="page-number">01</div>
+  </section>
+
+  <!-- =====================================
+       PAGE 02 : SOMMAIRE
+       ===================================== -->
+  <section class="slide" id="page-02">
+    <span class="section-tag">Navigation</span>
+    <h2 class="section-title">Sommaire</h2>
+    <h3 class="section-subtitle">Explorez mon univers</h3>
+
+    <ul class="sommaire-list">
+      <li>
+        <a href="#page-03">
+          <span class="sommaire-title">Introduction</span>
+          <span class="sommaire-num">03</span>
+        </a>
+      </li>
+      <li>
+        <a href="#page-04">
+          <span class="sommaire-title">Ma vision et mission</span>
+          <span class="sommaire-num">04</span>
+        </a>
+      </li>
+      <li>
+        <a href="#page-05">
+          <span class="sommaire-title">Mes projets</span>
+          <span class="sommaire-num">05</span>
+        </a>
+      </li>
+      <li>
+        <a href="#page-06">
+          <span class="sommaire-title">Contact</span>
+          <span class="sommaire-num">06</span>
+        </a>
+      </li>
+    </ul>
+    <div class="page-number">02</div>
+  </section>
+
+  <!-- =====================================
+       PAGE 03 : INTRODUCTION
+       ===================================== -->
+  <section class="slide" id="page-03">
+    <span class="section-tag">À propos</span>
+    <h2 class="section-title">Introduction</h2>
+    <h3 class="section-subtitle">Bienvenue dans mon univers créatif</h3>
+
+    <div class="intro-card">
+      <p>
+        Je suis <strong>Salwa Mouaddab</strong>, stagiaire passionnée en Développement Digital. Mon univers se situe à l'intersection du code et de la créativité. Je m'efforce de transformer des concepts complexes en interfaces fluides et performantes. Curieuse de nature et rigoureuse dans mon travail, mon parcours en développement me permet de concevoir des solutions numériques modernes qui répondent aux besoins des utilisateurs tout en respectant les standards du web.
+      </p>
+      <div class="quote-box">
+        "Parcourez mes projets pour voir comment je donne vie à des idées à travers des solutions logicielles et web performantes."
+      </div>
+    </div>
+    <div class="page-number">03</div>
+  </section>
+
+  <!-- =====================================
+       PAGE 04 : VISION & MISSION
+       ===================================== -->
+  <section class="slide" id="page-04">
+    <span class="section-tag">Objectifs</span>
+    <h2 class="section-title">Ma vision et mission</h2>
+    <h3 class="section-subtitle">Allier esthétique et performance technique</h3>
+
+    <div class="vision-grid">
+      <div class="vision-box">
+        <h4>✨ Ma Vision</h4>
+        <p>Créer des expériences numériques mémorables où le design soigné rencontre une architecture logicielle propre, accessible et évolutive.</p>
+      </div>
+      <div class="vision-box">
+        <h4>💻 Ma Mission</h4>
+        <p>Développer des applications web et Python fiables, apprendre continuellement les meilleures pratiques Full-Stack et relever chaque défi technique avec rigueur.</p>
+      </div>
+    </div>
+    <div class="page-number">04</div>
+  </section>
+
+  <!-- =====================================
+       PAGE 05 : MES PROJETS
+       ===================================== -->
+  <section class="slide" id="page-05">
+    <span class="section-tag">Réalisations</span>
+    <h2 class="section-title">Mes projets</h2>
+    <h3 class="section-subtitle">Réalisés avec amour et bienveillance</h3>
+
+
+  <!-- =====================================
+       PAGE 06 : CONTACT & MERCI
+       ===================================== -->
+  <section class="slide" id="page-06">
+    <div class="contact-container">
+      <span class="section-tag">Restons en contact</span>
+      <h2 class="section-title">CONTACTEZ</h2>
+      <h3 class="section-subtitle">moi pour vos projets ou stages</h3>
+
+      <div class="contact-links">
+        <a href="tel:+212656376212">📞 +212 656376212</a>
+        <a href="mailto:mouaddab.salwa@email.com">✉️ mouaddab.salwa@email.com</a>
+        <a href="https://github.com/salwamouaddab" target="_blank">💻 github.com/salwamouaddab</a>
+      </div>
+
+      <footer class="merci-footer">
+        <h2>Merci</h2>
+        <p>Salwa Mouaddab — 2026</p>
+      </footer>
+    </div>
+    <div class="page-number">06</div>
+  </section>
+
+</body>
+</html>
