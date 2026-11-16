@@ -30,7 +30,6 @@
       overflow-x: hidden;
     }
 
-    /* Structure générale de chaque Slide / Page */
     section.slide {
       min-height: 100vh;
       width: 100%;
@@ -50,7 +49,6 @@
       background-color: var(--bg-peach);
     }
 
-    /* Numéro de page en bas à droite (01, 02, ...) */
     .page-number {
       position: absolute;
       bottom: 30px;
@@ -63,7 +61,6 @@
       opacity: 0.7;
     }
 
-    /* Titres des sections */
     .section-tag {
       font-size: 12px;
       font-weight: 700;
@@ -90,7 +87,7 @@
     }
 
     /* =========================================
-       SLIDE 01 : COUVERTURE + BADGE SUSPENDU
+       SLIDE 01 : COUVERTURE + BADGE
        ========================================= */
     #page-01 {
       padding-top: 0;
@@ -103,7 +100,6 @@
       );
     }
 
-    /* Stores bleus en haut de la page 01 */
     #page-01::before {
       content: "";
       position: absolute;
@@ -168,12 +164,11 @@
       border-top: 1px solid rgba(66, 43, 41, 0.2);
     }
 
-    /* Conteneur du Badge (à droite sur Page 01) */
     .badge-wrapper {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-top: -60px; /* Accroché tout en haut */
+      margin-top: -60px;
     }
 
     .lanyard {
@@ -235,18 +230,13 @@
       width: 270px;
       background-color: var(--bg-cream);
       border-radius: 18px;
-      padding: 32px 20px 22px;
+      padding: 28px 20px 24px;
       margin-top: -14px;
       box-shadow: 0 18px 35px rgba(66, 43, 41, 0.14);
       display: flex;
       flex-direction: column;
       align-items: center;
       position: relative;
-      transition: transform 0.3s ease;
-    }
-
-    .badge-card:hover {
-      transform: rotate(-1.5deg) translateY(3px);
     }
 
     .badge-hole {
@@ -260,8 +250,8 @@
 
     .badge-header {
       text-align: center;
-      margin-top: 6px;
-      margin-bottom: 14px;
+      margin-top: 4px;
+      margin-bottom: 12px;
       line-height: 1;
     }
 
@@ -269,25 +259,25 @@
     .badge-header .bottom-word {
       display: block;
       font-weight: 800;
-      font-size: 17px;
+      font-size: 16px;
     }
 
     .badge-header .script-word {
       display: block;
       font-family: 'Playfair Display', serif;
       font-style: italic;
-      font-size: 24px;
+      font-size: 22px;
       margin: -2px 0;
     }
 
     .photo-frame {
-      width: 105px;
-      height: 105px;
+      width: 80px;
+      height: 80px;
       border: 1.5px solid #c9b9b6;
-      border-radius: 10px;
-      padding: 4px;
+      border-radius: 50%;
+      padding: 3px;
       background-color: #ffffff;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       overflow: hidden;
     }
 
@@ -295,16 +285,17 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 6px;
+      border-radius: 50%;
     }
 
     .info-section {
       width: 100%;
       padding: 0 10px;
+      text-align: center;
     }
 
     .user-name {
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 700;
       margin-bottom: 2px;
     }
@@ -312,34 +303,14 @@
     .user-role {
       font-size: 10px;
       color: var(--text-muted);
-      margin-bottom: 12px;
-    }
-
-    .barcode {
-      width: 100%;
-      height: 20px;
-      background: repeating-linear-gradient(
-        to right,
-        #422b29 0px, #422b29 2px,
-        transparent 2px, transparent 5px,
-        #422b29 5px, #422b29 9px,
-        transparent 9px, transparent 11px,
-        #422b29 11px, #422b29 12px,
-        transparent 12px, transparent 16px
-      );
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .badge-brand {
-      font-size: 8.5px;
+      font-size: 9px;
       font-weight: 700;
-      letter-spacing: 4px;
-    }
-
-    .badge-caption {
-      margin-top: 14px;
-      font-size: 13px;
-      font-weight: 700;
+      letter-spacing: 3px;
+      margin-top: 6px;
     }
 
     /* =========================================
@@ -442,29 +413,24 @@
     }
 
     /* =========================================
-       SLIDE 05 : MES PROJETS
+       SLIDE 05 : MES PROJETS (Bazar Al-Atika + Image)
        ========================================= */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 22px;
-      margin-top: 10px;
+      grid-template-columns: 1fr;
+      max-width: 650px;
+      margin-top: 15px;
     }
 
     .project-card {
       background-color: var(--bg-cream);
       border-radius: 18px;
-      padding: 24px;
+      padding: 28px;
       box-shadow: 0 10px 25px rgba(66, 43, 41, 0.07);
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      transition: transform 0.25s ease;
+      gap: 16px;
       border: 1px solid rgba(66, 43, 41, 0.08);
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px);
     }
 
     .project-tag {
@@ -477,28 +443,40 @@
       color: var(--text-brown);
       padding: 4px 10px;
       border-radius: 20px;
-      margin-bottom: 12px;
       width: fit-content;
     }
 
     .project-card h4 {
-      font-size: 17px;
+      font-size: 20px;
       font-weight: 700;
-      margin-bottom: 8px;
     }
 
     .project-card p {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--text-muted);
-      line-height: 1.5;
-      margin-bottom: 18px;
+      line-height: 1.6;
+    }
+
+    /* Style dyal tsswera taht l-ensenchur */
+    .project-img-preview {
+      width: 100%;
+      height: 200px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(66, 43, 41, 0.12);
+      background-color: #fff;
+    }
+
+    .project-img-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .project-links {
       display: flex;
       gap: 10px;
-      flex-wrap: wrap;
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 600;
     }
 
@@ -506,7 +484,7 @@
       text-decoration: none;
       color: var(--bg-cream);
       background-color: var(--text-brown);
-      padding: 7px 14px;
+      padding: 9px 18px;
       border-radius: 8px;
       transition: opacity 0.2s;
     }
@@ -515,14 +493,8 @@
       opacity: 0.85;
     }
 
-    .project-links span {
-      padding: 7px 10px;
-      color: var(--text-muted);
-      font-style: italic;
-    }
-
     /* =========================================
-       SLIDE 06 : CONTACT & FOOTER
+       SLIDE 06 : CONTACT & MERCI
        ========================================= */
     .contact-container {
       text-align: center;
@@ -565,7 +537,6 @@
       font-size: 42px;
     }
 
-    /* Responsive Mobile */
     @media (max-width: 860px) {
       .hero-grid {
         grid-template-columns: 1fr;
@@ -590,12 +561,9 @@
 </head>
 <body>
 
-  <!-- =====================================
-       PAGE 01 : COUVERTURE & BADGE
-       ===================================== -->
+  <!-- PAGE 01 : COUVERTURE & BADGE (Sans QR Code / Sans Only Human) -->
   <section class="slide" id="page-01">
     <div class="hero-grid">
-      <!-- Texte de présentation à gauche -->
       <div class="hero-text">
         <span class="section-tag">Edition 2026</span>
         <h1>Portfolio</h1>
@@ -608,7 +576,6 @@
         </div>
       </div>
 
-      <!-- Ton Badge suspendu à droite -->
       <div class="badge-wrapper">
         <div class="lanyard">
           <div class="rivet"></div>
@@ -626,25 +593,20 @@
             <span class="bottom-word">OFFICE</span>
           </div>
           <div class="photo-frame">
-            <!-- Remplace par le chemin relatif de ton image sur GitHub (ex: images/photo.jpeg) -->
             <img src="imageport.jpeg" alt="Salwa Mouaddab">
           </div>
           <div class="info-section">
             <div class="user-name">SALWA MOUADDAB</div>
             <div class="user-role">Stagiaire en Développement Digital</div>
-            <div class="barcode"></div>
           </div>
           <div class="badge-brand">OFPPT • DEV</div>
         </div>
-        <div class="badge-caption">(Only human writing code.)</div>
       </div>
     </div>
     <div class="page-number">01</div>
   </section>
 
-  <!-- =====================================
-       PAGE 02 : SOMMAIRE
-       ===================================== -->
+  <!-- PAGE 02 : SOMMAIRE -->
   <section class="slide" id="page-02">
     <span class="section-tag">Navigation</span>
     <h2 class="section-title">Sommaire</h2>
@@ -679,9 +641,7 @@
     <div class="page-number">02</div>
   </section>
 
-  <!-- =====================================
-       PAGE 03 : INTRODUCTION
-       ===================================== -->
+  <!-- PAGE 03 : INTRODUCTION -->
   <section class="slide" id="page-03">
     <span class="section-tag">À propos</span>
     <h2 class="section-title">Introduction</h2>
@@ -698,9 +658,7 @@
     <div class="page-number">03</div>
   </section>
 
-  <!-- =====================================
-       PAGE 04 : VISION & MISSION
-       ===================================== -->
+  <!-- PAGE 04 : VISION & MISSION -->
   <section class="slide" id="page-04">
     <span class="section-tag">Objectifs</span>
     <h2 class="section-title">Ma vision et mission</h2>
@@ -713,24 +671,39 @@
       </div>
       <div class="vision-box">
         <h4>💻 Ma Mission</h4>
-        <p>Développer des applications web et Python fiables, apprendre continuellement les meilleures pratiques Full-Stack et relever chaque défi technique avec rigueur.</p>
+        <p>Développer des applications web et logicielles fiables, apprendre continuellement les meilleures pratiques Full-Stack et relever chaque défi technique avec rigueur.</p>
       </div>
     </div>
     <div class="page-number">04</div>
   </section>
 
-  <!-- =====================================
-       PAGE 05 : MES PROJETS
-       ===================================== -->
+  <!-- PAGE 05 : MES PROJETS (Bazar Al-Atika + Image taht l-ensenchur) -->
   <section class="slide" id="page-05">
     <span class="section-tag">Réalisations</span>
     <h2 class="section-title">Mes projets</h2>
-    <h3 class="section-subtitle">Réalisés avec amour et bienveillance</h3>
+    <h3 class="section-subtitle">Réalisés avec amour et passion</h3>
 
+    <div class="projects-grid">
+      <div class="project-card">
+        <span class="project-tag">PHP / MySQL • E-commerce</span>
+        <h4>Bazar Al-Atika</h4>
+        <p>Application web e-commerce dédiée aux objets traditionnels marocains, hébergée en ligne avec authentification et espace admin complet.</p>
+        
+        <!-- Tsswera taht l-ensenchur (baddal 'bazar-preview.jpeg' b smiyat tsswera dyalk) -->
+        <div class="project-img-preview">
+          <img src="bazar-preview.jpeg" alt="Bazar Al-Atika Aperçu">
+        </div>
 
-  <!-- =====================================
-       PAGE 06 : CONTACT & MERCI
-       ===================================== -->
+        <div class="project-links">
+          <a href="http://bazar-al-atika.infinityfreeapp.com" target="_blank">🔗 Visiter le site</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-number">05</div>
+  </section>
+
+  <!-- PAGE 06 : CONTACT & MERCI -->
   <section class="slide" id="page-06">
     <div class="contact-container">
       <span class="section-tag">Restons en contact</span>
