@@ -417,7 +417,7 @@
        ========================================= */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
       gap: 30px;
       max-width: 1100px;
       margin-top: 15px;
@@ -504,6 +504,36 @@
     .securite-preview .sp-icone { font-size: 50px; line-height: 1.1; }
     .securite-preview .sp-titre { font-size: 17px; font-weight: 700; }
     .securite-preview .sp-sous  { font-size: 13px; opacity: 0.8; }
+
+    /* Aperçu dessiné en CSS pour le projet Générateur de CV */
+    .cv-preview {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #e9edf3;
+    }
+
+    .cv-mini {
+      display: flex;
+      width: 130px;
+      height: 170px;
+      background: #ffffff;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+    }
+
+    .cv-mini .cm-lateral { width: 34%; background: #2f5d8a; }
+
+    .cv-mini .cm-corps {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      padding: 14px 10px;
+    }
+
+    .cv-mini .cm-ligne { height: 6px; border-radius: 3px; background: #c9d2de; }
+    .cv-mini .cm-ligne.titre { width: 75%; height: 10px; background: #2f5d8a; }
+    .cv-mini .cm-ligne.courte { width: 60%; }
 
     .project-links {
       display: flex;
@@ -775,6 +805,33 @@
         <div class="project-links">
           <a href="https://salwamouaddab.github.io/gestion_securite_gardiennage/" target="_blank" rel="noopener">🔗 Voir l'application</a>
           <a class="secondaire" href="https://github.com/salwamouaddab/gestion_securite_gardiennage" target="_blank" rel="noopener">💻 Code source</a>
+        </div>
+      </div>
+
+
+      <!-- Projet 4 : Générateur de CV -->
+      <div class="project-card">
+        <span class="project-tag">JavaScript • Outil web</span>
+        <h4>Générateur de CV</h4>
+        <p>Outil en ligne pour créer son CV : formulaire avec aperçu en direct, choix de la couleur, photo et export en PDF.</p>
+
+        <div class="project-img-preview cv-preview" aria-label="Aperçu du générateur de CV">
+          <div class="cv-mini">
+            <div class="cm-lateral"></div>
+            <div class="cm-corps">
+              <div class="cm-ligne titre"></div>
+              <div class="cm-ligne"></div>
+              <div class="cm-ligne courte"></div>
+              <div class="cm-ligne"></div>
+              <div class="cm-ligne courte"></div>
+              <div class="cm-ligne"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-links">
+          <a href="https://salwamouaddab.github.io/cv-generator/" target="_blank" rel="noopener">🔗 Voir l'application</a>
+          <a class="secondaire" href="https://github.com/salwamouaddab/cv-generator" target="_blank" rel="noopener">💻 Code source</a>
         </div>
       </div>
 
