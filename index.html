@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio - Salwa Mouaddab</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,500;1,600&display=swap" rel="stylesheet">
-  
+
   <style>
     :root {
       --bg-peach: #f8d3c5;
@@ -16,12 +16,7 @@
       --border-soft: #e6c6bc;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
 
     body {
       font-family: 'Montserrat', sans-serif;
@@ -41,13 +36,8 @@
       border-bottom: 1px solid rgba(66, 43, 41, 0.08);
     }
 
-    section.slide:nth-child(even) {
-      background-color: var(--bg-cream);
-    }
-
-    section.slide:nth-child(odd) {
-      background-color: var(--bg-peach);
-    }
+    section.slide:nth-child(even) { background-color: var(--bg-cream); }
+    section.slide:nth-child(odd) { background-color: var(--bg-peach); }
 
     .page-number {
       position: absolute;
@@ -86,18 +76,10 @@
       margin-bottom: 35px;
     }
 
-    /* =========================================
-       SLIDE 01 : COUVERTURE + BADGE
-       ========================================= */
+    /* SLIDE 01 : COUVERTURE + BADGE */
     #page-01 {
       padding-top: 0;
-      background: linear-gradient(
-        to bottom,
-        var(--bg-blue) 0%,
-        var(--bg-blue) 22%,
-        var(--bg-peach) 22%,
-        var(--bg-peach) 100%
-      );
+      background: linear-gradient(to bottom, var(--bg-blue) 0%, var(--bg-blue) 22%, var(--bg-peach) 22%, var(--bg-peach) 100%);
     }
 
     #page-01::before {
@@ -107,13 +89,7 @@
       left: 0;
       width: 100%;
       height: 22%;
-      background: repeating-linear-gradient(
-        to bottom,
-        #c5dbf2,
-        #c5dbf2 24px,
-        #9eb8d6 25px,
-        #a8c2e0 27px
-      );
+      background: repeating-linear-gradient(to bottom, #c5dbf2, #c5dbf2 24px, #9eb8d6 25px, #a8c2e0 27px);
       border-bottom: 3px solid #96b0ce;
       z-index: 0;
     }
@@ -127,16 +103,8 @@
       width: 100%;
     }
 
-    .hero-text {
-      padding-top: 100px;
-    }
-
-    .hero-text h1 {
-      font-size: 64px;
-      font-weight: 800;
-      line-height: 1.05;
-      margin-bottom: 12px;
-    }
+    .hero-text { padding-top: 100px; }
+    .hero-text h1 { font-size: 64px; font-weight: 800; line-height: 1.05; margin-bottom: 12px; }
 
     .hero-text .script-accent {
       font-family: 'Playfair Display', serif;
@@ -147,13 +115,7 @@
       display: block;
     }
 
-    .hero-text p {
-      font-size: 16px;
-      color: var(--text-muted);
-      max-width: 480px;
-      line-height: 1.6;
-      margin-bottom: 30px;
-    }
+    .hero-text p { font-size: 16px; color: var(--text-muted); max-width: 480px; line-height: 1.6; margin-bottom: 30px; }
 
     .hero-footer-info {
       display: flex;
@@ -164,19 +126,13 @@
       border-top: 1px solid rgba(66, 43, 41, 0.2);
     }
 
-    .badge-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: -60px;
-    }
+    .badge-wrapper { display: flex; flex-direction: column; align-items: center; margin-top: -60px; }
 
     .lanyard {
       width: 42px;
       height: 115px;
       background-color: #d8c2c5;
-      background-image: radial-gradient(#422b29 22%, transparent 23%),
-                        radial-gradient(#422b29 22%, transparent 23%);
+      background-image: radial-gradient(#422b29 22%, transparent 23%), radial-gradient(#422b29 22%, transparent 23%);
       background-size: 20px 20px;
       background-position: 0 0, 10px 10px;
       position: relative;
@@ -194,37 +150,10 @@
       bottom: 12px;
     }
 
-    .clasp-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: -6px;
-      z-index: 3;
-    }
-
-    .clasp-loop {
-      width: 50px;
-      height: 24px;
-      border: 4px solid #b5bcc2;
-      border-radius: 6px 6px 20px 20px;
-    }
-
-    .clasp-body {
-      width: 14px;
-      height: 20px;
-      background: linear-gradient(90deg, #9aa1a8, #eef2f5, #8f969c);
-      border-radius: 3px;
-      margin-top: -3px;
-    }
-
-    .clasp-hook {
-      width: 22px;
-      height: 32px;
-      border: 4px solid #b5bcc2;
-      border-left: 4px solid #8f969c;
-      border-radius: 12px;
-      margin-top: -3px;
-    }
+    .clasp-container { display: flex; flex-direction: column; align-items: center; margin-top: -6px; z-index: 3; }
+    .clasp-loop { width: 50px; height: 24px; border: 4px solid #b5bcc2; border-radius: 6px 6px 20px 20px; }
+    .clasp-body { width: 14px; height: 20px; background: linear-gradient(90deg, #9aa1a8, #eef2f5, #8f969c); border-radius: 3px; margin-top: -3px; }
+    .clasp-hook { width: 22px; height: 32px; border: 4px solid #b5bcc2; border-left: 4px solid #8f969c; border-radius: 12px; margin-top: -3px; }
 
     .badge-card {
       width: 270px;
@@ -239,36 +168,10 @@
       position: relative;
     }
 
-    .badge-hole {
-      width: 24px;
-      height: 9px;
-      background-color: var(--bg-peach);
-      border-radius: 10px;
-      position: absolute;
-      top: 12px;
-    }
-
-    .badge-header {
-      text-align: center;
-      margin-top: 4px;
-      margin-bottom: 12px;
-      line-height: 1;
-    }
-
-    .badge-header .top-word,
-    .badge-header .bottom-word {
-      display: block;
-      font-weight: 800;
-      font-size: 16px;
-    }
-
-    .badge-header .script-word {
-      display: block;
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 22px;
-      margin: -2px 0;
-    }
+    .badge-hole { width: 24px; height: 9px; background-color: var(--bg-peach); border-radius: 10px; position: absolute; top: 12px; }
+    .badge-header { text-align: center; margin-top: 4px; margin-bottom: 12px; line-height: 1; }
+    .badge-header .top-word, .badge-header .bottom-word { display: block; font-weight: 800; font-size: 16px; }
+    .badge-header .script-word { display: block; font-family: 'Playfair Display', serif; font-style: italic; font-size: 22px; margin: -2px 0; }
 
     .photo-frame {
       width: 80px;
@@ -281,46 +184,14 @@
       overflow: hidden;
     }
 
-    .photo-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 50%;
-    }
+    .photo-frame img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+    .info-section { width: 100%; padding: 0 10px; text-align: center; }
+    .user-name { font-size: 14px; font-weight: 700; margin-bottom: 2px; }
+    .user-role { font-size: 10px; color: var(--text-muted); margin-bottom: 8px; }
+    .badge-brand { font-size: 9px; font-weight: 700; letter-spacing: 3px; margin-top: 6px; }
 
-    .info-section {
-      width: 100%;
-      padding: 0 10px;
-      text-align: center;
-    }
-
-    .user-name {
-      font-size: 14px;
-      font-weight: 700;
-      margin-bottom: 2px;
-    }
-
-    .user-role {
-      font-size: 10px;
-      color: var(--text-muted);
-      margin-bottom: 8px;
-    }
-
-    .badge-brand {
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      margin-top: 6px;
-    }
-
-    /* =========================================
-       SLIDE 02 : SOMMAIRE
-       ========================================= */
-    .sommaire-list {
-      list-style: none;
-      max-width: 700px;
-      margin-top: 20px;
-    }
+    /* SLIDE 02 : SOMMAIRE */
+    .sommaire-list { list-style: none; max-width: 700px; margin-top: 20px; }
 
     .sommaire-list li a {
       display: flex;
@@ -333,27 +204,11 @@
       transition: all 0.25s ease;
     }
 
-    .sommaire-list li a:hover {
-      padding-left: 28px;
-      background-color: rgba(248, 211, 197, 0.35);
-      border-radius: 10px;
-    }
+    .sommaire-list li a:hover { padding-left: 28px; background-color: rgba(248, 211, 197, 0.35); border-radius: 10px; }
+    .sommaire-title { font-size: 22px; font-weight: 700; }
+    .sommaire-num { font-family: 'Playfair Display', serif; font-style: italic; font-size: 24px; font-weight: 600; }
 
-    .sommaire-title {
-      font-size: 22px;
-      font-weight: 700;
-    }
-
-    .sommaire-num {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 24px;
-      font-weight: 600;
-    }
-
-    /* =========================================
-       SLIDE 03 : INTRODUCTION
-       ========================================= */
+    /* SLIDE 03 : INTRODUCTION */
     .intro-card {
       background-color: var(--bg-cream);
       padding: 45px;
@@ -362,12 +217,7 @@
       max-width: 850px;
     }
 
-    .intro-card p {
-      font-size: 16px;
-      line-height: 1.8;
-      color: var(--text-brown);
-      margin-bottom: 25px;
-    }
+    .intro-card p { font-size: 16px; line-height: 1.8; color: var(--text-brown); margin-bottom: 25px; }
 
     .quote-box {
       border-left: 4px solid var(--text-brown);
@@ -380,15 +230,8 @@
       line-height: 1.5;
     }
 
-    /* =========================================
-       SLIDE 04 : VISION & MISSION
-       ========================================= */
-    .vision-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 10px;
-    }
+    /* SLIDE 04 : VISION & MISSION */
+    .vision-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 10px; }
 
     .vision-box {
       background-color: var(--bg-peach);
@@ -397,31 +240,11 @@
       border: 1px solid rgba(66, 43, 41, 0.1);
     }
 
-    .vision-box h4 {
-      font-size: 20px;
-      font-weight: 800;
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+    .vision-box h4 { font-size: 20px; font-weight: 800; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+    .vision-box p { font-size: 14.5px; line-height: 1.7; color: var(--text-brown); }
 
-    .vision-box p {
-      font-size: 14.5px;
-      line-height: 1.7;
-      color: var(--text-brown);
-    }
-
-    /* =========================================
-       SLIDE 05 : MES PROJETS (2 projets côte à côte)
-       ========================================= */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      gap: 30px;
-      max-width: 1100px;
-      margin-top: 15px;
-    }
+    /* SLIDE 05 : MES PROJETS */
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px; max-width: 1100px; margin-top: 15px; }
 
     .project-card {
       background-color: var(--bg-cream);
@@ -447,16 +270,8 @@
       width: fit-content;
     }
 
-    .project-card h4 {
-      font-size: 20px;
-      font-weight: 700;
-    }
-
-    .project-card p {
-      font-size: 14px;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
+    .project-card h4 { font-size: 20px; font-weight: 700; }
+    .project-card p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
 
     .project-img-preview {
       width: 100%;
@@ -467,13 +282,9 @@
       background-color: #fff;
     }
 
-    .project-img-preview img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+    .project-img-preview img { width: 100%; height: 100%; object-fit: cover; }
 
-    /* Aperçu dessiné en CSS pour le projet Météo (pas besoin d'image) */
+    /* Aperçu Météo */
     .meteo-preview {
       display: flex;
       flex-direction: column;
@@ -489,7 +300,7 @@
     .meteo-preview .mp-temp  { font-size: 40px; font-weight: 800; line-height: 1; }
     .meteo-preview .mp-desc  { font-size: 13px; opacity: 0.85; }
 
-    /* Aperçu dessiné en CSS pour le projet Gestion Sécurité */
+    /* Aperçu Gestion Sécurité */
     .securite-preview {
       display: flex;
       flex-direction: column;
@@ -505,44 +316,21 @@
     .securite-preview .sp-titre { font-size: 17px; font-weight: 700; }
     .securite-preview .sp-sous  { font-size: 13px; opacity: 0.8; }
 
-    /* Aperçu dessiné en CSS pour le projet Générateur de CV */
-    .cv-preview {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #e9edf3;
-    }
-
-    .cv-mini {
-      display: flex;
-      width: 130px;
-      height: 170px;
-      background: #ffffff;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
-    }
-
+    /* Aperçu Générateur de CV */
+    .cv-preview { display: flex; align-items: center; justify-content: center; background: #e9edf3; }
+    .cv-mini { display: flex; width: 130px; height: 170px; background: #ffffff; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18); }
     .cv-mini .cm-lateral { width: 34%; background: #2f5d8a; }
-
-    .cv-mini .cm-corps {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-      padding: 14px 10px;
-    }
-
+    .cv-mini .cm-corps { flex: 1; display: flex; flex-direction: column; gap: 7px; padding: 14px 10px; }
     .cv-mini .cm-ligne { height: 6px; border-radius: 3px; background: #c9d2de; }
     .cv-mini .cm-ligne.titre { width: 75%; height: 10px; background: #2f5d8a; }
     .cv-mini .cm-ligne.courte { width: 60%; }
 
-    .project-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      font-size: 13px;
-      font-weight: 600;
-      margin-top: auto;
-    }
+    /* Aperçu Générateur de QR code */
+    .qr-preview { display: flex; align-items: center; justify-content: center; background: linear-gradient(160deg, #e4eee5, #c5d6c8); }
+    .qr-mini { width: 130px; height: 130px; padding: 8px; background: #ffffff; border: 4px solid #e8a317; border-radius: 10px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18); }
+    .qr-mini svg { width: 100%; height: 100%; display: block; }
+
+    .project-links { display: flex; flex-wrap: wrap; gap: 10px; font-size: 13px; font-weight: 600; margin-top: auto; }
 
     .project-links a {
       text-decoration: none;
@@ -553,31 +341,12 @@
       transition: opacity 0.2s;
     }
 
-    .project-links a.secondaire {
-      color: var(--text-brown);
-      background-color: transparent;
-      border: 1.5px solid var(--text-brown);
-    }
+    .project-links a.secondaire { color: var(--text-brown); background-color: transparent; border: 1.5px solid var(--text-brown); }
+    .project-links a:hover { opacity: 0.85; }
 
-    .project-links a:hover {
-      opacity: 0.85;
-    }
-
-    /* =========================================
-       SLIDE 06 : CONTACT & MERCI
-       ========================================= */
-    .contact-container {
-      text-align: center;
-      max-width: 650px;
-      margin: 0 auto;
-    }
-
-    .contact-links {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      margin: 30px 0 45px;
-    }
+    /* SLIDE 06 : CONTACT & MERCI */
+    .contact-container { text-align: center; max-width: 650px; margin: 0 auto; }
+    .contact-links { display: flex; flex-direction: column; gap: 15px; margin: 30px 0 45px; }
 
     .contact-links a {
       text-decoration: none;
@@ -591,41 +360,20 @@
       border: 1px solid rgba(66, 43, 41, 0.12);
     }
 
-    .contact-links a:hover {
-      transform: scale(1.02);
-      background-color: var(--bg-blue);
-    }
-
-    .merci-footer {
-      padding-top: 25px;
-      border-top: 1px dashed rgba(66, 43, 41, 0.25);
-    }
-
-    .merci-footer h2 {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 42px;
-    }
+    .contact-links a:hover { transform: scale(1.02); background-color: var(--bg-blue); }
+    .merci-footer { padding-top: 25px; border-top: 1px dashed rgba(66, 43, 41, 0.25); }
+    .merci-footer h2 { font-family: 'Playfair Display', serif; font-style: italic; font-size: 42px; }
 
     @media (max-width: 860px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-      .hero-text {
-        padding-top: 160px;
-        order: 2;
-      }
-      .hero-footer-info {
-        justify-content: center;
-      }
-      .badge-wrapper {
-        order: 1;
-        margin-top: 0;
-      }
-      .hero-text h1 {
-        font-size: 44px;
-      }
+      .hero-grid { grid-template-columns: 1fr; text-align: center; }
+      .hero-text { padding-top: 160px; order: 2; }
+      .hero-footer-info { justify-content: center; }
+      .badge-wrapper { order: 1; margin-top: 0; }
+      .hero-text h1 { font-size: 44px; }
+    }
+
+    @media (max-width: 480px) {
+      .projects-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -658,9 +406,9 @@
         <div class="badge-card">
           <div class="badge-hole"></div>
           <div class="badge-header">
-           <span class="top-word">DIGITAL</span>
-<span class="script-word">Creative</span>
-<span class="bottom-word">DEVELOPER</span>
+            <span class="top-word">DIGITAL</span>
+            <span class="script-word">Creative</span>
+            <span class="bottom-word">DEVELOPER</span>
           </div>
           <div class="photo-frame">
             <img src="imageportt.jpeg" alt="Salwa Mouaddab">
@@ -683,30 +431,10 @@
     <h3 class="section-subtitle">Explorez mon univers</h3>
 
     <ul class="sommaire-list">
-      <li>
-        <a href="#page-03">
-          <span class="sommaire-title">Introduction</span>
-          <span class="sommaire-num">03</span>
-        </a>
-      </li>
-      <li>
-        <a href="#page-04">
-          <span class="sommaire-title">Ma vision et mission</span>
-          <span class="sommaire-num">04</span>
-        </a>
-      </li>
-      <li>
-        <a href="#page-05">
-          <span class="sommaire-title">Mes projets</span>
-          <span class="sommaire-num">05</span>
-        </a>
-      </li>
-      <li>
-        <a href="#page-06">
-          <span class="sommaire-title">Contact</span>
-          <span class="sommaire-num">06</span>
-        </a>
-      </li>
+      <li><a href="#page-03"><span class="sommaire-title">Introduction</span><span class="sommaire-num">03</span></a></li>
+      <li><a href="#page-04"><span class="sommaire-title">Ma vision et mission</span><span class="sommaire-num">04</span></a></li>
+      <li><a href="#page-05"><span class="sommaire-title">Mes projets</span><span class="sommaire-num">05</span></a></li>
+      <li><a href="#page-06"><span class="sommaire-title">Contact</span><span class="sommaire-num">06</span></a></li>
     </ul>
     <div class="page-number">02</div>
   </section>
@@ -760,11 +488,9 @@
         <span class="project-tag">PHP / MySQL • E-commerce</span>
         <h4>Bazar Al-Atika</h4>
         <p>Application web e-commerce dédiée aux objets traditionnels marocains, hébergée en ligne avec authentification et espace admin complet.</p>
-
         <div class="project-img-preview">
           <img src="bazar-previeww.jpeg" alt="Bazar Al-Atika Aperçu">
         </div>
-
         <div class="project-links">
           <a href="http://bazar-al-atika.infinityfreeapp.com" target="_blank" rel="noopener">🔗 Visiter le site</a>
         </div>
@@ -775,46 +501,39 @@
         <span class="project-tag">JavaScript • API REST</span>
         <h4>Application Météo</h4>
         <p>Météo en temps réel et prévisions sur 3 jours pour n'importe quelle ville du monde, grâce à l'API Open-Meteo, avec mise à jour automatique.</p>
-
         <div class="project-img-preview meteo-preview" aria-label="Aperçu de l'application météo">
           <span class="mp-ville">Casablanca, Maroc</span>
           <span class="mp-icone">☀️</span>
           <span class="mp-temp">21°C</span>
           <span class="mp-desc">Ciel dégagé</span>
         </div>
-
         <div class="project-links">
           <a href="https://salwamouaddab.github.io/https-salwamouaddab.github.io-meteo-app-/" target="_blank" rel="noopener">🔗 Voir l'application</a>
           <a class="secondaire" href="https://github.com/salwamouaddab/https-salwamouaddab.github.io-meteo-app-" target="_blank" rel="noopener">💻 Code source</a>
         </div>
       </div>
 
-
       <!-- Projet 3 : Gestion Sécurité & Gardiennage -->
       <div class="project-card">
         <span class="project-tag">Application web • Gestion</span>
         <h4>Gestion Sécurité &amp; Gardiennage</h4>
         <p>Application web de gestion pour une société de sécurité et de gardiennage, accessible en ligne depuis n'importe quel navigateur.</p>
-
         <div class="project-img-preview securite-preview" aria-label="Aperçu de l'application de gestion de sécurité et gardiennage">
           <span class="sp-icone">🛡️</span>
           <span class="sp-titre">Gestion Sécurité</span>
           <span class="sp-sous">&amp; Gardiennage</span>
         </div>
-
         <div class="project-links">
           <a href="https://salwamouaddab.github.io/gestion_securite_gardiennage/" target="_blank" rel="noopener">🔗 Voir l'application</a>
           <a class="secondaire" href="https://github.com/salwamouaddab/gestion_securite_gardiennage" target="_blank" rel="noopener">💻 Code source</a>
         </div>
       </div>
 
-
       <!-- Projet 4 : Générateur de CV -->
       <div class="project-card">
         <span class="project-tag">JavaScript • Outil web</span>
         <h4>Générateur de CV</h4>
         <p>Outil en ligne pour créer son CV : formulaire avec aperçu en direct, choix de la couleur, photo et export en PDF.</p>
-
         <div class="project-img-preview cv-preview" aria-label="Aperçu du générateur de CV">
           <div class="cv-mini">
             <div class="cm-lateral"></div>
@@ -828,10 +547,27 @@
             </div>
           </div>
         </div>
-
         <div class="project-links">
           <a href="https://salwamouaddab.github.io/cv-generator/" target="_blank" rel="noopener">🔗 Voir l'application</a>
           <a class="secondaire" href="https://github.com/salwamouaddab/cv-generator" target="_blank" rel="noopener">💻 Code source</a>
+        </div>
+      </div>
+
+      <!-- Projet 5 : Générateur de QR code -->
+      <div class="project-card">
+        <span class="project-tag">JavaScript • Outil web</span>
+        <h4>Générateur de QR code</h4>
+        <p>Outil en ligne pour créer un QR code à partir d'un lien, d'un texte ou d'un réseau WiFi, avec aperçu instantané et téléchargement en PNG ou SVG.</p>
+        <div class="project-img-preview qr-preview" aria-label="Aperçu du générateur de QR code">
+          <div class="qr-mini">
+            <svg viewBox="0 0 21 21" shape-rendering="crispEdges" aria-hidden="true">
+              <path fill="#1d2b24" fill-rule="evenodd" d="M0 0h7v7h-7zM1 1v5h5v-5zM2 2h3v3h-3zM14 0h7v7h-7zM15 1v5h5v-5zM16 2h3v3h-3zM0 14h7v7h-7zM1 15v5h5v-5zM2 16h3v3h-3zM9 0h2v2h-2zM12 1h1v3h-1zM9 3h1v2h-1zM10 5h3v1h-3zM8 5h1v2h-1zM8 8h2v2h-2zM11 8h1v1h-1zM13 9h2v2h-2zM16 9h1v2h-1zM18 8h3v1h-3zM8 11h1v2h-1zM10 11h2v1h-2zM12 13h1v3h-1zM9 14h2v2h-2zM14 13h3v1h-3zM18 12h1v2h-1zM15 15h2v2h-2zM18 16h3v1h-3zM9 17h1v3h-1zM11 18h2v2h-2zM14 18h1v3h-1zM17 19h2v2h-2zM19 14h2v1h-2z"/>
+            </svg>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="https://salwamouaddab.github.io/qr-generator/" target="_blank" rel="noopener">🔗 Voir l'application</a>
+          <a class="secondaire" href="https://github.com/salwamouaddab/qr-generator" target="_blank" rel="noopener">💻 Code source</a>
         </div>
       </div>
 
